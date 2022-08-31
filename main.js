@@ -87,8 +87,7 @@
 
 //Métodos de Array:
 
-const array = ['1, 2, 3, 4, 5'];
-
+const array = [1, 2, 3, 4, 5, 'teste'];
 
 // 1º opção para se percorrer um array:
 
@@ -105,12 +104,59 @@ const array = ['1, 2, 3, 4, 5'];
 // })
 
 // 3º opção:
+//1 .map = significa percorrer o array
 // no .map conseguimos fazer um retorno de dentro do map, no forEach não.
+// O map será utilizado para quando eu quero transformar meu array em outro informação, em outro array (por exemplo: condicionais)
 
-const novoArray = array.map(item => {
-  return item * 2; 
-})
+// const novoArray = array.map(item => {
+//   if (item % 2 === 0 ) {
+//     return item * 10;
+//   } 
 
-document.body.innerText = JSON.stringify(novoArray)
+//   return item;
+// })
+
+// Metodos: map(), filter(), every(), some(), find(), findIndex(), reduce():
+
+//2. filter():
+//.filter = filtrando os itens dentro do array
+
+// === igual
+// !== diferente
+// se for true ele vai conter no novo array, se for false, não vai, dependendo do valor que colocarmos.
+
+// const novoArray = array
+//   .filter(item => item % 2 !== 0)
+//   .map(item => item * 10)
+
+//3. every() = Ele vai retornar um true, caso TODOS os itens satisfazem a uma determinada condição.
+// Ele vai retornar true ou false caso todos os itens (every) do array forem numeros (true) se não (false).
+
+// const todosItensSãoNumeros = array.every(item => typeof item === 'number');
+
+//4. some():
+// Ele não verifica se TODOS os itens satisfazem a condição que colocarmos, mas sim se PELO MENOS UM deles satisfazem.
+
+// const peloMenosUmItemNaoEUmNumero = array.some(item => {
+//     return typeof item !== 'number';
+// })
+
+//5. find():
+// Serve para encontrar UM item dentro desse array.
+// findIndex() retorna a posição 2 no array, que seria 1 (porque antes do 1 é 0, o array começa no 0)
+
+// const par = array.find(item => item % 2 === 0)
+
+//6. reduce(): Reduzir meu Array a algo.
+// Essa variável esta fazendo a soma dos valores
+
+const soma = array.reduce((acc, item) => {
+    return acc + item 
+}, 0)
+
+// o 0 zera o valor inicial. (podemos trocar esse valor, é independente e não necessariamente necessita ser 0)
+// O Objeto que estamos criando que é = acc (accumulator)
+
+document.body.innerText = JSON.stringify(soma)
 
   // document.body.innerText = user.address[key]
