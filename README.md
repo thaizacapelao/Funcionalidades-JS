@@ -1,5 +1,5 @@
 # Estudos-JS
-(Estudo)  Compilado prático sobre todas as funcionalidades importantes para se entender do JavaScript antes do React.
+(Estudo)  Compilado prático sobre todas as funcionalidades importantes para se entender no JavaScript antes do React.
 
 
 ## 📚:
